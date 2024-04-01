@@ -10,3 +10,4 @@ RUN go run mage.go build
 
 FROM  envoyproxy/envoy:v1.29-latest
 COPY --from=build /tmp/coraza-proxy-wasm/build/main.wasm /coraza-proxy.wasm
+COPY ./envoy.yaml /etc/envoy/envoy.yaml
